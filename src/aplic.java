@@ -1,5 +1,6 @@
 
 import fatec.poo.model.ContaCorrente;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class aplic {
@@ -7,9 +8,10 @@ public class aplic {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ContaCorrente contaCorrente = new ContaCorrente(1, 0);
-
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+        
         int option;
-        boolean validador = true;
+        boolean validador;
 
         while (true) {
             System.out.println(
@@ -43,7 +45,7 @@ public class aplic {
                     break;
                 }
                 case 3: {
-                    System.out.println("\nSaldo: " + contaCorrente.getSaldo());
+                    System.out.println("\nSaldo: " + df.format(contaCorrente.getSaldo()));
                     break;
                 }
                 default: {
